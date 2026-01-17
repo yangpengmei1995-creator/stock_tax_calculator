@@ -92,7 +92,6 @@ with st.expander("🔐 长桥 API 凭证", expanded=True):
             "Region", ["cn", "hk"], index=0 if saved_region == "cn" else 1)
 
         if st.form_submit_button("💾 保存"):
-            CONFIG_FILE.parent.mkdir(parents=True, exist_ok=True)
             CONFIG_FILE.touch(exist_ok=True)
             set_key(CONFIG_FILE, "LONGPORT_APP_KEY", app_key)
             set_key(CONFIG_FILE, "LONGPORT_APP_SECRET", app_secret)
